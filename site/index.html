@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="is-preloading">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,8 +32,24 @@
     "knowsLanguage": ["de", "en"]
   }
   </script>
+
+  <!-- Fallback if JS is disabled: never trap the page behind the preloader -->
+  <noscript><style>#preloader{display:none!important}html.is-preloading,html.is-preloading body{overflow:auto!important}</style></noscript>
 </head>
 <body>
+
+  <!-- ===================== PRELOADER (brand intro) ===================== -->
+  <div id="preloader" class="preloader" role="status" aria-live="polite" aria-label="Andreis Service — Seite wird geladen">
+    <div class="preloader__inner">
+      <div class="preloader__logo">
+        <img src="assets/img/brand/logo.png" alt="Andreis Service" width="656" height="200" fetchpriority="high">
+      </div>
+      <svg class="preloader__line" viewBox="0 0 427 12" fill="none" aria-hidden="true" preserveAspectRatio="none">
+        <path d="M78.2035 2.00049C78.1105 2.02109 78.0174 2.04169 80.1633 2.12795C82.3092 2.21422 86.6969 2.36552 147.136 2.51379C207.575 2.66206 323.933 2.80271 383.145 2.92951C442.357 3.05631 440.898 3.16499 364.665 4.30888C288.433 5.45277 137.472 7.62857 60.3466 8.78034C-16.7789 9.93211 -15.4946 9.99391 52.4794 10C120.453 10.0061 255.078 9.95458 393.783 9.90152"/>
+      </svg>
+    </div>
+  </div>
+
   <a class="skip-link" href="#hauptinhalt" data-i18n="a11y.skip">Zum Inhalt springen</a>
 
   <!-- ===================== TOP BAR ===================== -->
@@ -60,7 +76,7 @@
         <a href="#leistungen" data-i18n="nav.services">Leistungen</a>
         <a href="#projekte" data-i18n="nav.portfolio">Projekte</a>
         <a href="#anfrage" data-i18n="nav.request">Anfrage</a>
-        <a href="#vorteile" data-i18n="nav.advantages">Vorteile</a>
+        <a href="#warum-wir" data-i18n="nav.advantages">Vorteile</a>
         <a href="#bewertungen" data-i18n="nav.reviews">Bewertungen</a>
         <a href="#faq" data-i18n="nav.faq">FAQ</a>
         <a href="#kontakt" data-i18n="nav.contact">Kontakt</a>
@@ -91,7 +107,7 @@
         <a href="#leistungen"><span data-i18n="nav.services">Leistungen</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m9 18 6-6-6-6"/></svg></a>
         <a href="#projekte"><span data-i18n="nav.portfolio">Projekte</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m9 18 6-6-6-6"/></svg></a>
         <a href="#anfrage"><span data-i18n="nav.request">Anfrage</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m9 18 6-6-6-6"/></svg></a>
-        <a href="#vorteile"><span data-i18n="nav.advantages">Vorteile</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m9 18 6-6-6-6"/></svg></a>
+        <a href="#warum-wir"><span data-i18n="nav.advantages">Vorteile</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m9 18 6-6-6-6"/></svg></a>
         <a href="#bewertungen"><span data-i18n="nav.reviews">Bewertungen</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m9 18 6-6-6-6"/></svg></a>
         <a href="#faq"><span data-i18n="nav.faq">FAQ</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m9 18 6-6-6-6"/></svg></a>
         <a href="#kontakt"><span data-i18n="nav.contact">Kontakt</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m9 18 6-6-6-6"/></svg></a>
@@ -131,9 +147,16 @@
       <div class="container">
         <div class="hero__grid">
           <div class="hero__copy reveal">
-            <span class="eyebrow" data-i18n="hero.eyebrow">Hausmeisterservice · Berlin & Brandenburg</span>
-            <h1 data-anim="words" data-i18n="hero.h1">Professionelle Küchenmontage, Möbelmontage &amp; <span class="hl">Hausmeisterservice</span> in Berlin und Brandenburg</h1>
-            <p class="hero__sub" data-i18n="hero.sub">Senden Sie uns einen Link zur Küche, Ihren Plan oder Fotos — und erhalten Sie kurzfristig eine erste Kostenschätzung für die Montage.</p>
+            <div class="hero__badge">
+              <span class="hero__badge-avatars" aria-hidden="true">
+                <img src="assets/img/portfolio/p1.jpg" alt="" width="40" height="40" loading="eager">
+                <img src="assets/img/portfolio/p7.jpg" alt="" width="40" height="40" loading="eager">
+                <img src="assets/img/portfolio/p13.jpg" alt="" width="40" height="40" loading="eager">
+              </span>
+              <span class="hero__badge-text"><strong>4,9 ★</strong><span data-i18n="hero.chip">100 % Weiterempfehlung</span></span>
+            </div>
+            <h1 data-anim="words" data-i18n="hero.h1">Professionelle Küchenmontage, Möbelmontage &amp;<br><span class="hl">Hausmeisterservice</span> in Berlin und Brandenburg</h1>
+            <p class="hero__sub" data-i18n="hero.sub">Senden Sie uns Fotos oder einen Link — und erhalten Sie kurzfristig eine erste Kostenschätzung.</p>
             <div class="hero__trust">
               <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="hero.t1">Über 5 Jahre Erfahrung</span></span>
               <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="hero.t2">Faire Preise</span></span>
@@ -150,68 +173,107 @@
               </a>
             </div>
           </div>
-
-          <div class="hero__strip reveal" data-delay="2">
-            <div class="hero__strip-badge">
-              <span class="rating" data-count="4.9" data-dec="1">4,9</span>
-              <div>
-                <div class="stars" aria-hidden="true">★★★★★</div>
-                <div class="meta" data-i18n="hero.badgeMeta">50 Bewertungen auf CHECK24</div>
-              </div>
-            </div>
-            <div class="hero__strip-item"><img src="assets/img/portfolio/p1.jpg" alt="Grifflose Küche mit Marmor-Rückwand in Berlin" loading="eager" width="320" height="427"></div>
-            <div class="hero__strip-item"><img src="assets/img/portfolio/p7.jpg" alt="IKEA PAX Kleiderschrank mit Spiegeltüren" loading="eager" width="320" height="427"></div>
-            <div class="hero__strip-item"><img src="assets/img/portfolio/p9.jpg" alt="Aufbau einer Lagerbühne mit Treppe" loading="lazy" width="320" height="427"></div>
-            <div class="hero__strip-item"><img src="assets/img/portfolio/p13.jpg" alt="Helle Küche mit Massivholz-Arbeitsplatte" loading="lazy" width="320" height="427"></div>
-          </div>
         </div>
       </div>
     </section>
 
-    <!-- Ticker (decorative) -->
-    <div class="ticker" aria-hidden="true">
-      <div class="ticker__track">
-        <span class="ticker__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg><span data-i18n="tick.1">Küchenmontage</span></span>
-        <span class="ticker__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg><span data-i18n="tick.2">IKEA Möbelmontage</span></span>
-        <span class="ticker__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg><span data-i18n="tick.3">Beleuchtungsmontage</span></span>
-        <span class="ticker__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg><span data-i18n="tick.4">Arbeitsplatten & Zuschnitt</span></span>
-        <span class="ticker__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg><span data-i18n="tick.5">Geräteanschluss</span></span>
-        <span class="ticker__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg><span data-i18n="tick.6">Hausmeisterservice</span></span>
-        <span class="ticker__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg><span data-i18n="tick.7">Berlin & Brandenburg</span></span>
-        <span class="ticker__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg><span data-i18n="tick.1">Küchenmontage</span></span>
-        <span class="ticker__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg><span data-i18n="tick.2">IKEA Möbelmontage</span></span>
-        <span class="ticker__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg><span data-i18n="tick.3">Beleuchtungsmontage</span></span>
-        <span class="ticker__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg><span data-i18n="tick.4">Arbeitsplatten & Zuschnitt</span></span>
-        <span class="ticker__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg><span data-i18n="tick.5">Geräteanschluss</span></span>
-        <span class="ticker__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg><span data-i18n="tick.6">Hausmeisterservice</span></span>
-        <span class="ticker__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"/></svg><span data-i18n="tick.7">Berlin & Brandenburg</span></span>
+    <!-- ===================== MARQUEE (photo strip) ===================== -->
+    <section class="marquee" aria-label="Projektbilder">
+      <div class="marquee__row">
+        <div class="marquee__track">
+          <figure class="marquee__item"><img src="assets/img/portfolio/p1.jpg" alt="Grifflose Küche mit Marmor-Rückwand in Berlin" loading="lazy" width="320" height="240"></figure>
+          <figure class="marquee__item"><img src="assets/img/portfolio/p3.jpg" alt="Küche mit Massivholz-Arbeitsplatte" loading="lazy" width="320" height="240"></figure>
+          <figure class="marquee__item"><img src="assets/img/portfolio/p6.jpg" alt="Schwarze Küche mit Dunstabzug" loading="lazy" width="320" height="240"></figure>
+          <figure class="marquee__item"><img src="assets/img/portfolio/p7.jpg" alt="IKEA PAX Kleiderschrank mit Spiegeltüren" loading="lazy" width="320" height="240"></figure>
+          <figure class="marquee__item"><img src="assets/img/portfolio/p9.jpg" alt="Aufbau einer Lagerbühne mit Treppe" loading="lazy" width="320" height="240"></figure>
+          <figure class="marquee__item"><img src="assets/img/portfolio/p10.jpg" alt="Montage von Deckenleuchten" loading="lazy" width="320" height="240"></figure>
+          <figure class="marquee__item"><img src="assets/img/portfolio/p13.jpg" alt="Helle Küche mit Massivholz-Arbeitsplatte" loading="lazy" width="320" height="240"></figure>
+          <figure class="marquee__item" aria-hidden="true"><img src="assets/img/portfolio/p1.jpg" alt="" loading="lazy" width="320" height="240"></figure>
+          <figure class="marquee__item" aria-hidden="true"><img src="assets/img/portfolio/p3.jpg" alt="" loading="lazy" width="320" height="240"></figure>
+          <figure class="marquee__item" aria-hidden="true"><img src="assets/img/portfolio/p6.jpg" alt="" loading="lazy" width="320" height="240"></figure>
+          <figure class="marquee__item" aria-hidden="true"><img src="assets/img/portfolio/p7.jpg" alt="" loading="lazy" width="320" height="240"></figure>
+          <figure class="marquee__item" aria-hidden="true"><img src="assets/img/portfolio/p9.jpg" alt="" loading="lazy" width="320" height="240"></figure>
+          <figure class="marquee__item" aria-hidden="true"><img src="assets/img/portfolio/p10.jpg" alt="" loading="lazy" width="320" height="240"></figure>
+          <figure class="marquee__item" aria-hidden="true"><img src="assets/img/portfolio/p13.jpg" alt="" loading="lazy" width="320" height="240"></figure>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <!-- ===================== 3 · SERVICES ===================== -->
+    <!-- ===================== SERVICES (reference-style cards) ===================== -->
     <section class="section" id="leistungen">
       <div class="container">
         <div class="svc-head reveal">
           <div>
             <span class="eyebrow" data-i18n="svc.eyebrow">Unsere Leistungen</span>
-            <h2 data-anim="words" data-i18n="svc.h2">Alles rund um Küche, Möbel und Wohnung — aus einer Hand</h2>
+            <h2 data-anim="words" data-i18n="svc.h2">Finden Sie den richtigen <span class="hl">Service</span> für Ihr Zuhause</h2>
           </div>
           <p class="lead" data-i18n="svc.lead">Von der kompletten Küchenmontage bis zum einzelnen Regal an der Wand: saubere, präzise Arbeit in ganz Berlin und Brandenburg.</p>
         </div>
 
-        <div class="svc-cards">
-          <article class="svc-card reveal"><div class="svc-card__head"><div><h3 data-i18n="s1.t">Küchenmontage</h3><div class="svc-card__cat" data-i18n="cat.kitchen">Küche</div></div><button class="svc-card__arrow" data-open-popup aria-label="Anfragen" data-i18n-aria="cta.estimate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></button></div><div class="svc-card__media"><img src="assets/img/portfolio/p1.jpg" alt="Küchenmontage in Berlin" loading="lazy" width="420" height="290"></div></article>
-          <article class="svc-card reveal" data-delay="1"><div class="svc-card__head"><div><h3 data-i18n="s2.t">Küchendemontage</h3><div class="svc-card__cat" data-i18n="cat.kitchen">Küche</div></div><button class="svc-card__arrow" data-open-popup aria-label="Anfragen" data-i18n-aria="cta.estimate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></button></div><div class="svc-card__media"><img src="assets/img/portfolio/p13.jpg" alt="Küchendemontage und Vorbereitung" loading="lazy" width="420" height="290"></div></article>
-          <article class="svc-card reveal" data-delay="2"><div class="svc-card__head"><div><h3 data-i18n="s3.t">Umzug und Wiedermontage von Küchen</h3><div class="svc-card__cat" data-i18n="cat.kitchen">Küche</div></div><button class="svc-card__arrow" data-open-popup aria-label="Anfragen" data-i18n-aria="cta.estimate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></button></div><div class="svc-card__media"><img src="assets/img/portfolio/p3.jpg" alt="Küchenumzug und Wiedermontage" loading="lazy" width="420" height="290"></div></article>
-          <article class="svc-card reveal"><div class="svc-card__head"><div><h3 data-i18n="s4.t">Arbeitsplattenmontage & Gehrungsschnitt</h3><div class="svc-card__cat" data-i18n="cat.kitchen">Küche</div></div><button class="svc-card__arrow" data-open-popup aria-label="Anfragen" data-i18n-aria="cta.estimate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></button></div><div class="svc-card__media"><img src="assets/img/portfolio/p6.jpg" alt="Arbeitsplattenmontage mit Gehrungsschnitt" loading="lazy" width="420" height="290"></div></article>
-          <article class="svc-card reveal" data-delay="1"><div class="svc-card__head"><div><h3 data-i18n="s5.t">Ausschnitte für Spüle und Kochfeld</h3><div class="svc-card__cat" data-i18n="cat.kitchen">Küche</div></div><button class="svc-card__arrow" data-open-popup aria-label="Anfragen" data-i18n-aria="cta.estimate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></button></div><div class="svc-card__media"><img src="assets/img/portfolio/p4.jpg" alt="Ausschnitte für Spüle und Kochfeld" loading="lazy" width="420" height="290"></div></article>
-          <article class="svc-card reveal" data-delay="2"><div class="svc-card__head"><div><h3 data-i18n="s6.t">Anschluss von Küchengeräten</h3><div class="svc-card__cat" data-i18n="cat.kitchen">Küche</div></div><button class="svc-card__arrow" data-open-popup aria-label="Anfragen" data-i18n-aria="cta.estimate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></button></div><div class="svc-card__media"><img src="assets/img/portfolio/p4.jpg" alt="Anschluss von Kochfeld und Backofen" loading="lazy" width="420" height="290"></div></article>
-          <article class="svc-card reveal"><div class="svc-card__head"><div><h3 data-i18n="s7.t">Möbelmontage von IKEA und anderen Herstellern</h3><div class="svc-card__cat" data-i18n="cat.furniture">Möbel</div></div><button class="svc-card__arrow" data-open-popup aria-label="Anfragen" data-i18n-aria="cta.estimate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></button></div><div class="svc-card__media"><img src="assets/img/portfolio/p7.jpg" alt="IKEA Möbelmontage" loading="lazy" width="420" height="290"></div></article>
-          <article class="svc-card reveal" data-delay="1"><div class="svc-card__head"><div><h3 data-i18n="s8.t">Schränke, Kleiderschränke, Kommoden & Betten</h3><div class="svc-card__cat" data-i18n="cat.furniture">Möbel</div></div><button class="svc-card__arrow" data-open-popup aria-label="Anfragen" data-i18n-aria="cta.estimate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></button></div><div class="svc-card__media"><img src="assets/img/portfolio/p5.jpg" alt="Montage von Schränken und Betten" loading="lazy" width="420" height="290"></div></article>
-          <article class="svc-card reveal" data-delay="2"><div class="svc-card__head"><div><h3 data-i18n="s9.t">Kronleuchter und Deckenleuchten</h3><div class="svc-card__cat" data-i18n="cat.light">Beleuchtung</div></div><button class="svc-card__arrow" data-open-popup aria-label="Anfragen" data-i18n-aria="cta.estimate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></button></div><div class="svc-card__media"><img src="assets/img/portfolio/p10.jpg" alt="Montage von Deckenleuchten" loading="lazy" width="420" height="290"></div></article>
-          <article class="svc-card reveal"><div class="svc-card__head"><div><h3 data-i18n="s10.t">Gardinenstangen, Regale und Spiegel</h3><div class="svc-card__cat" data-i18n="cat.mount">Montage</div></div><button class="svc-card__arrow" data-open-popup aria-label="Anfragen" data-i18n-aria="cta.estimate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></button></div><div class="svc-card__media"><img src="assets/img/portfolio/p2.jpg" alt="Wandmontage von Regalen und Spiegeln mit Laser" loading="lazy" width="420" height="290"></div></article>
-          <article class="svc-card reveal" data-delay="1"><div class="svc-card__head"><div><h3 data-i18n="s11.t">Hausmeisterservice</h3><div class="svc-card__cat" data-i18n="cat.haus">Hausmeister</div></div><button class="svc-card__arrow" data-open-popup aria-label="Anfragen" data-i18n-aria="cta.estimate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></button></div><div class="svc-card__media"><img src="assets/img/portfolio/p12.jpg" alt="Hausmeisterservice in Berlin und Brandenburg" loading="lazy" width="420" height="290"></div></article>
-          <article class="svc-card reveal" data-delay="2"><div class="svc-card__head"><div><h3 data-i18n="s12.t">Kleine Reparatur- und Montagearbeiten</h3><div class="svc-card__cat" data-i18n="cat.haus">Hausmeister</div></div><button class="svc-card__arrow" data-open-popup aria-label="Anfragen" data-i18n-aria="cta.estimate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></button></div><div class="svc-card__media"><img src="assets/img/portfolio/p8.jpg" alt="Kleine Reparatur- und Montagearbeiten" loading="lazy" width="420" height="290"></div></article>
+        <div class="lsvc-grid">
+          <a class="lsvc reveal" data-open-popup href="#anfrage">
+            <span class="lsvc__corner" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            <span class="lsvc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M7 6h.01M11 6h.01"/></svg></span>
+            <h3 class="lsvc__title" data-i18n="s1.t">Küchenmontage</h3>
+            <p class="lsvc__desc" data-i18n="s1.d">Fachgerechte Komplettmontage Ihrer Küche — präzise, sauber und zuverlässig.</p>
+            <div class="lsvc__foot"><span class="lsvc__price"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M15 9.4a3.4 3.4 0 0 0-6 2.6 3.4 3.4 0 0 0 6 2.6M7.6 11h5.2M7.6 13h5.2" stroke-linecap="round"/></svg><span><span class="lsvc__from" data-i18n="svc.from">ab</span> 290&nbsp;€</span></span><span class="lsvc__rating"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.2 1 5.9L12 16.9 6.8 19.6l1-5.9L3.5 9.5l5.9-.9L12 3Z"/></svg>4,9&nbsp;(50)</span></div>
+          </a>
+          <a class="lsvc reveal" data-delay="1" data-open-popup href="#anfrage">
+            <span class="lsvc__corner" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            <span class="lsvc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M12 3v18M9 8v3M15 8v3"/></svg></span>
+            <h3 class="lsvc__title" data-i18n="s7.t">Möbelmontage von IKEA und anderen Herstellern</h3>
+            <p class="lsvc__desc" data-i18n="s7.d">Aufbau von Möbeln von IKEA, Höffner, Roller, XXXLutz und anderen Herstellern.</p>
+            <div class="lsvc__foot"><span class="lsvc__price"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M15 9.4a3.4 3.4 0 0 0-6 2.6 3.4 3.4 0 0 0 6 2.6M7.6 11h5.2M7.6 13h5.2" stroke-linecap="round"/></svg><span><span class="lsvc__from" data-i18n="svc.from">ab</span> 49&nbsp;€</span></span><span class="lsvc__rating"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.2 1 5.9L12 16.9 6.8 19.6l1-5.9L3.5 9.5l5.9-.9L12 3Z"/></svg>4,9&nbsp;(50)</span></div>
+          </a>
+          <a class="lsvc reveal" data-delay="2" data-open-popup href="#anfrage">
+            <span class="lsvc__corner" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            <span class="lsvc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.6.6 1 1.3 1 2.5h6c0-1.2.4-1.9 1-2.5A6 6 0 0 0 12 3Z"/></svg></span>
+            <h3 class="lsvc__title" data-i18n="s9.t">Kronleuchter und Deckenleuchten</h3>
+            <p class="lsvc__desc" data-i18n="s9.d">Sichere Montage von Deckenleuchten, Kronleuchtern und LED-Beleuchtung.</p>
+            <div class="lsvc__foot"><span class="lsvc__price"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M15 9.4a3.4 3.4 0 0 0-6 2.6 3.4 3.4 0 0 0 6 2.6M7.6 11h5.2M7.6 13h5.2" stroke-linecap="round"/></svg><span><span class="lsvc__from" data-i18n="svc.from">ab</span> 59&nbsp;€</span></span><span class="lsvc__rating"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.2 1 5.9L12 16.9 6.8 19.6l1-5.9L3.5 9.5l5.9-.9L12 3Z"/></svg>4,9&nbsp;(50)</span></div>
+          </a>
+          <a class="lsvc reveal" data-open-popup href="#anfrage">
+            <span class="lsvc__corner" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            <span class="lsvc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="7" width="19" height="10" rx="1.5"/><path d="M7 7v3M11 7v4M15 7v3M19 7v3"/></svg></span>
+            <h3 class="lsvc__title" data-i18n="s4.t">Arbeitsplattenmontage & Gehrungsschnitt</h3>
+            <p class="lsvc__desc" data-i18n="s4.d">Saubere Arbeitsplattenmontage inkl. präziser Gehrungs- und Anpassungsschnitte.</p>
+            <div class="lsvc__foot"><span class="lsvc__price"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M15 9.4a3.4 3.4 0 0 0-6 2.6 3.4 3.4 0 0 0 6 2.6M7.6 11h5.2M7.6 13h5.2" stroke-linecap="round"/></svg><span><span class="lsvc__from" data-i18n="svc.from">ab</span> 150&nbsp;€</span></span><span class="lsvc__rating"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.2 1 5.9L12 16.9 6.8 19.6l1-5.9L3.5 9.5l5.9-.9L12 3Z"/></svg>4,9&nbsp;(50)</span></div>
+          </a>
+          <a class="lsvc reveal" data-delay="1" data-open-popup href="#anfrage">
+            <span class="lsvc__corner" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            <span class="lsvc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6M15 2v6"/><path d="M7 8h10v3a5 5 0 0 1-10 0V8ZM12 16v6"/></svg></span>
+            <h3 class="lsvc__title" data-i18n="s6.t">Anschluss von Küchengeräten</h3>
+            <p class="lsvc__desc" data-i18n="s6.d">Anschluss von Backofen, Kochfeld, Dunstabzug und weiteren Küchengeräten.</p>
+            <div class="lsvc__foot"><span class="lsvc__price"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M15 9.4a3.4 3.4 0 0 0-6 2.6 3.4 3.4 0 0 0 6 2.6M7.6 11h5.2M7.6 13h5.2" stroke-linecap="round"/></svg><span><span class="lsvc__from" data-i18n="svc.from">ab</span> 80&nbsp;€</span></span><span class="lsvc__rating"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.2 1 5.9L12 16.9 6.8 19.6l1-5.9L3.5 9.5l5.9-.9L12 3Z"/></svg>4,9&nbsp;(50)</span></div>
+          </a>
+          <a class="lsvc reveal" data-delay="2" data-open-popup href="#anfrage">
+            <span class="lsvc__corner" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            <span class="lsvc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 10h18M3 15h18"/></svg></span>
+            <h3 class="lsvc__title" data-i18n="s10.t">Gardinenstangen, Regale und Spiegel</h3>
+            <p class="lsvc__desc" data-i18n="s10.d">Präzise Wandmontage von Gardinenstangen, Regalen, Spiegeln und Zubehör.</p>
+            <div class="lsvc__foot"><span class="lsvc__price"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M15 9.4a3.4 3.4 0 0 0-6 2.6 3.4 3.4 0 0 0 6 2.6M7.6 11h5.2M7.6 13h5.2" stroke-linecap="round"/></svg><span><span class="lsvc__from" data-i18n="svc.from">ab</span> 39&nbsp;€</span></span><span class="lsvc__rating"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.2 1 5.9L12 16.9 6.8 19.6l1-5.9L3.5 9.5l5.9-.9L12 3Z"/></svg>4,9&nbsp;(50)</span></div>
+          </a>
+          <a class="lsvc reveal" data-open-popup href="#anfrage">
+            <span class="lsvc__corner" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            <span class="lsvc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg></span>
+            <h3 class="lsvc__title" data-i18n="s11.t">Hausmeisterservice</h3>
+            <p class="lsvc__desc" data-i18n="s11.d">Zuverlässige Hilfe bei kleinen Wartungs-, Reparatur- und Montagearbeiten.</p>
+            <div class="lsvc__foot"><span class="lsvc__price"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M15 9.4a3.4 3.4 0 0 0-6 2.6 3.4 3.4 0 0 0 6 2.6M7.6 11h5.2M7.6 13h5.2" stroke-linecap="round"/></svg><span><span class="lsvc__from" data-i18n="svc.from">ab</span> 39&nbsp;€</span></span><span class="lsvc__rating"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.2 1 5.9L12 16.9 6.8 19.6l1-5.9L3.5 9.5l5.9-.9L12 3Z"/></svg>4,9&nbsp;(50)</span></div>
+          </a>
+          <a class="lsvc reveal" data-delay="1" data-open-popup href="#anfrage">
+            <span class="lsvc__corner" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            <span class="lsvc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12h8"/></svg></span>
+            <h3 class="lsvc__title" data-i18n="s2.t">Küchendemontage</h3>
+            <p class="lsvc__desc" data-i18n="s2.d">Fachgerechte Demontage bestehender Küchen — für Umzug, Renovierung oder Neubau.</p>
+            <div class="lsvc__foot"><span class="lsvc__price"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M15 9.4a3.4 3.4 0 0 0-6 2.6 3.4 3.4 0 0 0 6 2.6M7.6 11h5.2M7.6 13h5.2" stroke-linecap="round"/></svg><span><span class="lsvc__from" data-i18n="svc.from">ab</span> 120&nbsp;€</span></span><span class="lsvc__rating"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.2 1 5.9L12 16.9 6.8 19.6l1-5.9L3.5 9.5l5.9-.9L12 3Z"/></svg>4,9&nbsp;(50)</span></div>
+          </a>
+          <a class="lsvc reveal" data-delay="2" data-open-popup href="#anfrage">
+            <span class="lsvc__corner" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            <span class="lsvc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m14 7 3 3M5 21l9-9"/><path d="M14 7l2-2a2.8 2.8 0 0 1 4 4l-2 2-4-4Z"/></svg></span>
+            <h3 class="lsvc__title" data-i18n="s12.t">Kleine Reparatur- und Montagearbeiten</h3>
+            <p class="lsvc__desc" data-i18n="s12.d">Flexible Hilfe bei alltäglichen Aufgaben in Wohnung, Haus oder Büro.</p>
+            <div class="lsvc__foot"><span class="lsvc__price"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M15 9.4a3.4 3.4 0 0 0-6 2.6 3.4 3.4 0 0 0 6 2.6M7.6 11h5.2M7.6 13h5.2" stroke-linecap="round"/></svg><span><span class="lsvc__from" data-i18n="svc.from">ab</span> 35&nbsp;€</span></span><span class="lsvc__rating"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.2 1 5.9L12 16.9 6.8 19.6l1-5.9L3.5 9.5l5.9-.9L12 3Z"/></svg>4,9&nbsp;(50)</span></div>
+          </a>
         </div>
       </div>
     </section>
@@ -222,7 +284,7 @@
         <div class="head-split reveal">
           <div>
             <span class="eyebrow" data-i18n="pf.eyebrow">Referenzen</span>
-            <h2 data-anim="words" data-i18n="pf.h2">Ausgewählte Projekte aus Berlin & Brandenburg</h2>
+            <h2 data-anim="words" data-i18n="pf.h2">Ausgewählte <span class="hl">Projekte</span> aus Berlin & Brandenburg</h2>
           </div>
           <p class="lead head-split__intro" data-i18n="pf.lead">Ein Blick auf echte Montagen — Küchen, Schränke, Beleuchtung und Montagearbeiten, sauber vor Ort umgesetzt.</p>
         </div>
@@ -257,20 +319,12 @@
     <!-- ===================== 5 · CTA / REQUEST FORM (with process intro) ===================== -->
     <section class="section section--dark request" id="anfrage">
       <div class="container">
-        <div class="section-head center reveal" style="margin-inline:auto">
-          <span class="eyebrow" data-i18n="rq.eyebrow">Anfrage</span>
-          <h2 data-anim="words" data-i18n="rq.h2">Kostenlose Ersteinschätzung für Ihre Montage anfragen</h2>
-          <p class="lead" data-i18n="rq.sub" style="margin-inline:auto">Senden Sie uns Informationen, Fotos oder einen Link zu Ihrer Küche oder Ihren Möbeln. Wir melden uns kurzfristig mit einer ersten Einschätzung.</p>
-        </div>
-
-        <div class="process__steps request__process reveal">
-          <div class="step"><div class="step__media"><span class="step__ring"></span><span class="step__num">1</span><img src="assets/img/portfolio/p2.jpg" alt="Anfrage senden" loading="lazy" width="124" height="124"></div><h3 data-i18n="st1.t">Anfrage senden</h3><p data-i18n="st1.d">Schicken Sie uns Fotos, einen Plan oder einen Link zu Küche oder Möbeln — per Formular oder WhatsApp.</p><svg class="step__arrow" viewBox="0 0 120 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 14h104" stroke-dasharray="5 7"/><path d="m100 7 8 7-8 7"/></svg></div>
-          <div class="step"><div class="step__media"><span class="step__ring"></span><span class="step__num">2</span><img src="assets/img/portfolio/p4.jpg" alt="Einschätzung erhalten" loading="lazy" width="124" height="124"></div><h3 data-i18n="st2.t">Einschätzung erhalten</h3><p data-i18n="st2.d">Wir prüfen Ihr Projekt und melden uns kurzfristig mit einer ersten, transparenten Einschätzung.</p><svg class="step__arrow" viewBox="0 0 120 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 14h104" stroke-dasharray="5 7"/><path d="m100 7 8 7-8 7"/></svg></div>
-          <div class="step"><div class="step__media"><span class="step__ring"></span><span class="step__num">3</span><img src="assets/img/portfolio/p1.jpg" alt="Termin und Montage" loading="lazy" width="124" height="124"></div><h3 data-i18n="st3.t">Termin & Montage</h3><p data-i18n="st3.d">Wir vereinbaren einen Termin und montieren sauber, präzise und termintreu bei Ihnen vor Ort.</p></div>
-        </div>
-
         <div class="request__grid">
           <div class="request__intro reveal">
+            <div class="request__sticky">
+            <span class="eyebrow" data-i18n="rq.eyebrow">Anfrage</span>
+            <h2 data-anim="words" data-i18n="rq.h2">Kostenlose <span class="hl">Ersteinschätzung</span><br>für Ihre Montage anfragen</h2>
+            <p class="lead" data-i18n="rq.sub">Senden Sie uns Informationen, Fotos oder einen Link zu Ihrer Küche oder Ihren Möbeln. Wir melden uns kurzfristig mit einer ersten Einschätzung.</p>
             <ul class="request__list">
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="rq.li1">Einschätzung anhand von Link, Plan oder Fotos — ganz ohne ersten Vor-Ort-Termin</span></li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="rq.li2">Schnelle Antwort, meistens per WhatsApp</span></li>
@@ -278,18 +332,17 @@
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="rq.li4">Vor Ort in ganz Berlin & Brandenburg</span></li>
             </ul>
             <div class="request__contacts">
-              <a class="btn btn--whatsapp" data-contact="whatsapp" target="_blank" rel="noopener">
+              <a class="contact-ico contact-ico--wa" data-contact="whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp" data-i18n-aria="aria.wa">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.3 14c-.2.6-1.3 1.2-1.8 1.2s-1.3.3-4-1.4c-2.7-1.6-3.4-3.6-3.6-3.8s-.6-.9-.6-1.7.4-1.2.6-1.4.4-.2.6-.2h.5c.2 0 .4 0 .6.5l.7 1.7c.1.2.1.4 0 .6l-.4.5c-.2.2-.3.3-.1.6s.7 1.1 1.5 1.8c1 .9 1.8 1.1 2 1.2s.4.1.6-.1l.7-.8c.2-.3.4-.2.6-.1l1.7.8c.2.1.4.2.4.3s0 .8-.2 1.3Z"/></svg>
-                WhatsApp
               </a>
-              <a class="btn btn--ghost btn--on-dark" data-contact="phone">
+              <a class="contact-ico contact-ico--tg" data-contact="telegram" target="_blank" rel="noopener" aria-label="Telegram" data-i18n-aria="aria.telegram">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.6 20c-.2 1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.2 13.9l-4.8-1.5c-1-.3-1-1 .2-1.5l18.7-7.2c.9-.3 1.6.2 1.4 1.6Z"/></svg>
+              </a>
+              <a class="btn btn--ghost btn--on-dark contact-phone" data-contact="phone">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg>
                 <span data-contact-text="phone">+49 1577 1234567</span>
               </a>
-              <a class="btn btn--ghost btn--on-dark" data-contact="telegram" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.6 20c-.2 1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.2 13.9l-4.8-1.5c-1-.3-1-1 .2-1.5l18.7-7.2c.9-.3 1.6.2 1.4 1.6Z"/></svg>
-                Telegram
-              </a>
+            </div>
             </div>
           </div>
 
@@ -341,9 +394,11 @@
                   <label data-i18n="f.upload">Fotos oder Projektdatei hochladen</label>
                   <label class="upload">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m17 8-5-5-5 5M12 3v12"/></svg>
-                    <span class="upload__hint"><strong data-i18n="f.uploadCta">Dateien wählen oder hierher ziehen</strong></span>
-                    <span class="upload__hint" data-i18n="f.uploadHint">JPG, PNG oder PDF · bis 10 MB</span>
-                    <span class="upload__files"></span>
+                    <span class="upload__text">
+                      <strong data-i18n="f.uploadCta">Dateien wählen oder hierher ziehen</strong>
+                      <span class="upload__hint" data-i18n="f.uploadHint">JPG, PNG oder PDF · bis 10 MB</span>
+                      <span class="upload__files"></span>
+                    </span>
                     <input type="file" name="files" accept="image/*,application/pdf" multiple>
                   </label>
                 </div>
@@ -393,65 +448,57 @@
       </div>
     </section>
 
-    <!-- ===================== 6 · ADVANTAGES (with about intro) ===================== -->
-    <section class="section" id="vorteile">
+    <!-- ===================== WHY CHOOSE (trust + 4 features) ===================== -->
+    <section class="section" id="warum-wir">
       <div class="container">
-        <div class="about__grid adv-intro">
-          <div class="about__media reveal">
-            <div class="about__media-frame"><img src="assets/img/portfolio/p6.jpg" alt="Fertig montierte schwarze Küche mit Holzarbeitsplatte in Berlin" loading="lazy" width="640" height="512"></div>
-            <div class="about__rating">
-              <span class="num" data-count="4.9" data-dec="1">4,9</span>
-              <div>
-                <div class="stars" aria-hidden="true">★★★★★</div>
-                <div class="meta" data-i18n="hero.badgeMeta">50 Bewertungen auf CHECK24</div>
-              </div>
-            </div>
-          </div>
-          <div class="about__copy reveal" data-delay="1">
-            <span class="eyebrow" data-i18n="adv.eyebrow">Warum Andreis Service</span>
-            <h2 data-anim="words" data-i18n="about.h2">Zuverlässige Montage, ehrliche Arbeit — bei jedem Projekt</h2>
-            <p class="lead" data-i18n="about.sub">Andreis Mahotin und sein Team montieren Küchen und Möbel sauber, präzise und termintreu. Vom ersten Foto bis zur fertigen Montage haben Sie einen verlässlichen Ansprechpartner.</p>
-            <ul class="about__check">
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="about.c1">Über 5 Jahre Erfahrung mit Küchen jeder Komplexität</span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="about.c2">Küchen, Möbel und Beleuchtung aus einer Hand</span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="about.c3">Anschluss von Backofen, Kochfeld und Dunstabzug</span></li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="about.c4">Einsatz in ganz Berlin und Brandenburg</span></li>
-            </ul>
-            <div class="about__cta">
+        <div class="trust__grid">
+          <div class="trust__media reveal"><img src="assets/img/portfolio/p1.jpg" alt="Grifflose Küche mit Marmor-Rückwand, sauber montiert in Berlin" loading="lazy" width="620" height="465"></div>
+          <div class="trust__copy reveal" data-delay="1">
+            <span class="eyebrow" data-i18n="trust.eyebrow">Warum Andreis Service</span>
+            <h2 data-anim="words" data-i18n="trust.h2">Warum Kundinnen und Kunden in Berlin & Brandenburg uns <span class="hl">vertrauen</span></h2>
+            <p class="lead" data-i18n="trust.sub">4,9 von 5 auf CHECK24 und 100 % Weiterempfehlung — das Ergebnis sauberer Arbeit und klarer Kommunikation.</p>
+            <div class="trust__cta">
               <a class="btn btn--primary" data-open-popup href="#anfrage"><span data-i18n="cta.estimate">Kostenlose Einschätzung anfragen</span></a>
-              <a class="btn btn--ghost" data-contact="phone">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg>
-                <span data-i18n="cta.call">Jetzt anrufen</span>
+              <a class="btn btn--whatsapp" data-contact="whatsapp" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.3 14c-.2.6-1.3 1.2-1.8 1.2s-1.3.3-4-1.4c-2.7-1.6-3.4-3.6-3.6-3.8s-.6-.9-.6-1.7.4-1.2.6-1.4.4-.2.6-.2h.5c.2 0 .4 0 .6.5l.7 1.7c.1.2.1.4 0 .6l-.4.5c-.2.2-.3.3-.1.6s.7 1.1 1.5 1.8c1 .9 1.8 1.1 2 1.2s.4.1.6-.1l.7-.8c.2-.3.4-.2.6-.1l1.7.8c.2.1.4.2.4.3s0 .8-.2 1.3Z"/></svg>
+                <span data-i18n="cta.whatsapp">WhatsApp schreiben</span>
               </a>
             </div>
           </div>
         </div>
-
-        <div class="section-head center reveal">
-          <span class="eyebrow" data-i18n="adv.eyebrow2">Ihre Vorteile</span>
-          <h2 data-anim="words" data-i18n="adv.h2">Verlässliche Handwerksarbeit, mit der Sie planen können</h2>
-          <p class="lead" data-i18n="adv.lead" style="margin-inline:auto">Klare Kommunikation, saubere Ausführung und faire Preise — das schätzen unsere Kundinnen und Kunden am meisten.</p>
-        </div>
-        <div class="adv__grid">
+        <div class="adv__grid adv__grid--spaced">
           <div class="adv reveal"><div class="adv__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div><h3 data-i18n="a1.t">Über 5 Jahre praktische Erfahrung</h3><p data-i18n="a1.d">Routine aus hunderten Küchen, Schränken und Montagen.</p></div></div>
-          <div class="adv reveal" data-delay="1"><div class="adv__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg></div><div><h3 data-i18n="a2.t">Spezialisierung auf Küchen jeder Komplexität</h3><p data-i18n="a2.d">Von der kompakten Küchenzeile bis zur großen Einbauküche.</p></div></div>
-          <div class="adv reveal" data-delay="2"><div class="adv__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 3 2.5 5 5.5.8-4 3.9.9 5.5L12 16.5 7.1 18.2 8 12.7 4 8.8 9.5 8 12 3Z"/></svg></div><div><h3 data-i18n="a3.t">Saubere und präzise Ausführung</h3><p data-i18n="a3.d">Gerade Linien, dichte Fugen und eine aufgeräumte Baustelle.</p></div></div>
-          <div class="adv reveal"><div class="adv__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4L3 21l1.1-3a8.4 8.4 0 1 1 16.9-6.5Z"/></svg></div><div><h3 data-i18n="a4.t">Schnelle Kommunikation per WhatsApp und Telefon</h3><p data-i18n="a4.d">Schnelle Antworten und klare Terminabsprachen.</p></div></div>
-          <div class="adv reveal" data-delay="1"><div class="adv__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div><h3 data-i18n="a5.t">Transparente und faire Preise</h3><p data-i18n="a5.d">Klare Einschätzung vorab — keine Überraschungen auf der Rechnung.</p></div></div>
-          <div class="adv reveal" data-delay="2"><div class="adv__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div><div><h3 data-i18n="a6.t">Einsatz in ganz Berlin und Brandenburg</h3><p data-i18n="a6.d">Vor Ort in der Stadt und im Umland.</p></div></div>
-          <div class="adv reveal"><div class="adv__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9.7 14.3 12 9l2.3 5.3M3 12a9 9 0 1 1 18 0 9 9 0 0 1-18 0Z"/></svg></div><div><h3 data-i18n="a7.t">Individuelle Lösung für jedes Projekt</h3><p data-i18n="a7.d">Wir denken mit, auch wenn Plan und Teile nicht passen.</p></div></div>
-          <div class="adv reveal" data-delay="1"><div class="adv__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 3 2.9 6.3 6.8.7-5 4.6 1.4 6.7L12 17.8 5.9 20.3 7.3 14.6l-5-4.6 6.8-.7Z"/></svg></div><div><h3 data-i18n="a8.t">Positive Kundenbewertungen</h3><p data-i18n="a8.d">4,9 auf CHECK24 mit 100 % Weiterempfehlung.</p></div></div>
-          <div class="adv reveal" data-delay="2"><div class="adv__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h18v4H3zM5 11v8h14v-8M9 15h6"/></svg></div><div><h3 data-i18n="a9.t">Küchen, Möbel und Beleuchtung aus einer Hand</h3><p data-i18n="a9.d">Ein zuverlässiger Ansprechpartner für die gesamte Montage.</p></div></div>
+          <div class="adv reveal" data-delay="1"><div class="adv__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 3 2.5 5 5.5.8-4 3.9.9 5.5L12 16.5 7.1 18.2 8 12.7 4 8.8 9.5 8 12 3Z"/></svg></div><div><h3 data-i18n="a3.t">Saubere und präzise Ausführung</h3><p data-i18n="a3.d">Gerade Linien, dichte Fugen und eine aufgeräumte Baustelle.</p></div></div>
+          <div class="adv reveal" data-delay="2"><div class="adv__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4L3 21l1.1-3a8.4 8.4 0 1 1 16.9-6.5Z"/></svg></div><div><h3 data-i18n="a4.t">Schnelle Kommunikation per WhatsApp und Telefon</h3><p data-i18n="a4.d">Schnelle Antworten und klare Terminabsprachen.</p></div></div>
+          <div class="adv reveal"><div class="adv__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div><h3 data-i18n="a5.t">Transparente und faire Preise</h3><p data-i18n="a5.d">Klare Einschätzung vorab — keine Überraschungen auf der Rechnung.</p></div></div>
+          <div class="adv reveal" data-delay="1"><div class="adv__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div><div><h3 data-i18n="a6.t">Einsatz in ganz Berlin und Brandenburg</h3><p data-i18n="a6.d">Vor Ort in der Stadt und im Umland.</p></div></div>
+          <div class="adv reveal" data-delay="2"><div class="adv__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 3 2.9 6.3 6.8.7-5 4.6 1.4 6.7L12 17.8 5.9 20.3 7.3 14.6l-5-4.6 6.8-.7Z"/></svg></div><div><h3 data-i18n="a8.t">Positive Kundenbewertungen</h3><p data-i18n="a8.d">4,9 auf CHECK24 mit 100 % Weiterempfehlung.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROCESS (3 steps) ===================== -->
+    <section class="section section--tint" id="ablauf">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow" data-i18n="process.eyebrow">So funktioniert es</span>
+          <h2 data-anim="words" data-i18n="process.h2">So läuft Ihre <span class="hl">Anfrage</span> ab</h2>
+          <p class="lead" data-i18n="process.sub" style="margin-inline:auto">In drei einfachen Schritten von der ersten Nachricht bis zur fertigen Montage.</p>
+        </div>
+        <div class="process__steps reveal">
+          <div class="step"><div class="step__media"><span class="step__ring"></span><span class="step__num">1</span><img src="assets/img/portfolio/p2.jpg" alt="Anfrage senden" loading="lazy" width="124" height="124"></div><h3 data-i18n="st1.t">Anfrage senden</h3><p data-i18n="st1.d">Schicken Sie uns Fotos, einen Plan oder einen Link zu Küche oder Möbeln — per Formular oder WhatsApp.</p><svg class="step__arrow" viewBox="0 0 120 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 14h104" stroke-dasharray="5 7"/><path d="m100 7 8 7-8 7"/></svg></div>
+          <div class="step"><div class="step__media"><span class="step__ring"></span><span class="step__num">2</span><img src="assets/img/portfolio/p4.jpg" alt="Einschätzung erhalten" loading="lazy" width="124" height="124"></div><h3 data-i18n="st2.t">Einschätzung erhalten</h3><p data-i18n="st2.d">Wir prüfen Ihr Projekt und melden uns kurzfristig mit einer ersten, transparenten Einschätzung.</p><svg class="step__arrow" viewBox="0 0 120 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 14h104" stroke-dasharray="5 7"/><path d="m100 7 8 7-8 7"/></svg></div>
+          <div class="step"><div class="step__media"><span class="step__ring"></span><span class="step__num">3</span><img src="assets/img/portfolio/p1.jpg" alt="Termin und Montage" loading="lazy" width="124" height="124"></div><h3 data-i18n="st3.t">Termin &amp; Montage</h3><p data-i18n="st3.d">Wir vereinbaren einen Termin und montieren sauber, präzise und termintreu bei Ihnen vor Ort.</p></div>
         </div>
       </div>
     </section>
 
     <!-- ===================== 7 · REVIEWS ===================== -->
-    <section class="section section--tint" id="bewertungen">
+    <section class="section" id="bewertungen">
       <div class="container">
         <div class="section-head center reveal">
           <span class="eyebrow" data-i18n="rv.eyebrow">Bewertungen</span>
-          <h2 data-anim="words" data-i18n="rv.h2">Das sagen Kundinnen und Kunden in Berlin & Brandenburg</h2>
+          <h2 data-anim="words" data-i18n="rv.h2">Das sagen Kundinnen und <span class="hl">Kunden</span> in Berlin & Brandenburg</h2>
           <p class="lead" data-i18n="rv.lead" style="margin-inline:auto">Echte Bewertungen von verifizierten CHECK24-Kunden.</p>
         </div>
 
@@ -477,21 +524,30 @@
           </div>
         </div>
 
-        <div class="reviews__grid">
-          <article class="review reveal"><div class="review__stars" aria-label="5 von 5 Sternen">★★★★★</div><p class="review__text" data-i18n="r1.text">„Aufbau einer Lagerbühne — ich bin sehr zufrieden mit der Arbeit von Andreis. Er hat alles bestens vorbereitet, lösungsorientiert gearbeitet und großen Wert auf Qualität und Stabilität gelegt. Das sieht man am Ergebnis. Jederzeit gerne wieder!“</p><div class="review__foot"><div class="review__avatar" aria-hidden="true">A</div><div class="review__who"><strong data-i18n="r1.name">Aldo Q.</strong><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="r1.loc">Berlin</span></span></div></div></article>
-          <article class="review reveal" data-delay="1"><div class="review__stars" aria-label="5 von 5 Sternen">★★★★★</div><p class="review__text" data-i18n="r2.text">„Ausgezeichnete Arbeit! Strukturiert, professionell und mit perfekter technischer Ausstattung. Er hat ein Regal so aufgebaut, dass es in meine kleinere Wohnung passt. Sehr flexibel — ich komme gerne auf Herrn Mahotin zurück.“</p><div class="review__foot"><div class="review__avatar" aria-hidden="true">T</div><div class="review__who"><strong data-i18n="r2.name">Frau Tietze</strong><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="r2.loc">Berlin</span></span></div></div></article>
-          <article class="review reveal" data-delay="2"><div class="review__stars" aria-label="5 von 5 Sternen">★★★★★</div><p class="review__text" data-i18n="r3.text">„Pünktlich, freundlich und professionell. Unsere IKEA Möbel wurden sauber aufgebaut und stabil montiert. Der Preis war transparent.“</p><div class="review__foot"><div class="review__avatar" aria-hidden="true">M</div><div class="review__who"><strong data-i18n="r3.name">Markus R.</strong><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="r3.loc">Potsdam</span></span></div></div></article>
-          <article class="review reveal" data-delay="3"><div class="review__stars" aria-label="5 von 5 Sternen">★★★★★</div><p class="review__text" data-i18n="r4.text">„Wir haben Lampen, Regale und Spiegel montieren lassen. Alles wurde sehr ordentlich und sauber erledigt. Die Kommunikation war durchgehend top.“</p><div class="review__foot"><div class="review__avatar" aria-hidden="true">E</div><div class="review__who"><strong data-i18n="r4.name">Elena S.</strong><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="r4.loc">Berlin-Charlottenburg</span></span></div></div></article>
+        <div class="rev-slider reveal">
+          <div class="rev-track" tabindex="0" aria-label="Bewertungen">
+            <article class="review"><div class="review__stars" aria-label="5 von 5 Sternen">★★★★★</div><p class="review__text" data-i18n="r1.text">„Aufbau einer Lagerbühne — ich bin sehr zufrieden mit der Arbeit von Andreis. Er hat alles bestens vorbereitet, lösungsorientiert gearbeitet und großen Wert auf Qualität und Stabilität gelegt. Das sieht man am Ergebnis. Jederzeit gerne wieder!“</p><div class="review__foot"><div class="review__avatar" aria-hidden="true">A</div><div class="review__who"><strong data-i18n="r1.name">Aldo Q.</strong><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="r1.loc">Berlin</span></span></div></div></article>
+            <article class="review"><div class="review__stars" aria-label="5 von 5 Sternen">★★★★★</div><p class="review__text" data-i18n="r2.text">„Ausgezeichnete Arbeit! Strukturiert, professionell und mit perfekter technischer Ausstattung. Er hat ein Regal so aufgebaut, dass es in meine kleinere Wohnung passt. Sehr flexibel — ich komme gerne auf Herrn Mahotin zurück.“</p><div class="review__foot"><div class="review__avatar" aria-hidden="true">T</div><div class="review__who"><strong data-i18n="r2.name">Frau Tietze</strong><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="r2.loc">Berlin</span></span></div></div></article>
+            <article class="review"><div class="review__stars" aria-label="5 von 5 Sternen">★★★★★</div><p class="review__text" data-i18n="r5.text">„Super! Sehr kompetent und freundlich. Die Arbeiten wurden zu unserer vollsten Zufriedenheit erledigt. Kann man nur weiterempfehlen.“</p><div class="review__foot"><div class="review__avatar" aria-hidden="true">D</div><div class="review__who"><strong data-i18n="r5.name">Daniel K.</strong><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="r5.loc">Berlin</span></span></div></div></article>
+            <article class="review"><div class="review__stars" aria-label="5 von 5 Sternen">★★★★★</div><p class="review__text" data-i18n="r6.text">„Wir können Andrei absolut empfehlen und sind sehr glücklich mit dem Ergebnis. Wir haben ein komplexes Schiebetüren-System einbauen lassen — alles wurde souverän und mit großem Fachwissen gemeistert.“</p><div class="review__foot"><div class="review__avatar" aria-hidden="true">T</div><div class="review__who"><strong data-i18n="r6.name">Thomas B.</strong><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="r6.loc">Berlin</span></span></div></div></article>
+            <article class="review"><div class="review__stars" aria-label="5 von 5 Sternen">★★★★★</div><p class="review__text" data-i18n="r3.text">„Pünktlich, freundlich und professionell. Unsere IKEA Möbel wurden sauber aufgebaut und stabil montiert. Der Preis war transparent.“</p><div class="review__foot"><div class="review__avatar" aria-hidden="true">M</div><div class="review__who"><strong data-i18n="r3.name">Markus R.</strong><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="r3.loc">Potsdam</span></span></div></div></article>
+            <article class="review"><div class="review__stars" aria-label="5 von 5 Sternen">★★★★★</div><p class="review__text" data-i18n="r7.text">„Kompetent, ordentlich und hat bei mehr Aufgaben geholfen als erwartet. Andrei hat einen Spiegelschrank im Bad montiert — gerade und stabil — und meine Duschwand repariert. Ich beauftrage ihn gerne wieder.“</p><div class="review__foot"><div class="review__avatar" aria-hidden="true">S</div><div class="review__who"><strong data-i18n="r7.name">Sarah M.</strong><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="r7.loc">Berlin</span></span></div></div></article>
+            <article class="review"><div class="review__stars" aria-label="5 von 5 Sternen">★★★★★</div><p class="review__text" data-i18n="r4.text">„Wir haben Lampen, Regale und Spiegel montieren lassen. Alles wurde sehr ordentlich und sauber erledigt. Die Kommunikation war durchgehend top.“</p><div class="review__foot"><div class="review__avatar" aria-hidden="true">E</div><div class="review__who"><strong data-i18n="r4.name">Elena S.</strong><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="r4.loc">Berlin-Charlottenburg</span></span></div></div></article>
+          </div>
+          <div class="rev-nav">
+            <button type="button" class="rev-arrow rev-prev" aria-label="Vorherige Bewertung" data-i18n-aria="aria.prev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+            <button type="button" class="rev-arrow rev-next" aria-label="Nächste Bewertung" data-i18n-aria="aria.next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ===================== 8 · FAQ ===================== -->
-    <section class="section" id="faq">
+    <section class="section section--tint" id="faq">
       <div class="container">
         <div class="section-head center reveal">
           <span class="eyebrow" data-i18n="faq.eyebrow">FAQ</span>
-          <h2 data-anim="words" data-i18n="faq.h2">Häufige Fragen</h2>
+          <h2 data-anim="words" data-i18n="faq.h2">Häufige <span class="hl">Fragen</span></h2>
           <p class="lead" data-i18n="faq.lead" style="margin-inline:auto">Schnelle Antworten auf die Fragen, die uns am häufigsten erreichen.</p>
         </div>
         <div class="faq reveal">
@@ -524,6 +580,17 @@
         </div>
       </div>
 
+      <div class="footer__news reveal">
+        <div>
+          <h4 data-i18n="news.h4">Tipps & Angebote per E-Mail</h4>
+          <p data-i18n="news.sub">Gelegentliche Hinweise rund um Montage und Pflege — kein Spam, jederzeit abbestellbar.</p>
+        </div>
+        <form data-newsletter novalidate>
+          <input type="email" name="news-email" autocomplete="email" placeholder="Ihre E-Mail-Adresse" data-i18n-ph="news.ph" aria-label="E-Mail für Newsletter">
+          <button type="submit" class="btn btn--accent"><span data-i18n="news.cta">Abonnieren</span></button>
+        </form>
+      </div>
+
       <div class="footer__grid">
         <div class="footer__brand">
           <img src="assets/img/brand/logo.png" alt="Andreis Service Logo" height="54" width="178">
@@ -537,36 +604,29 @@
         </div>
 
         <div class="footer__col">
-          <h4 data-i18n="ft.colServices">Leistungen</h4>
-          <ul>
-            <li><a href="#leistungen" data-i18n="s1.t">Küchenmontage</a></li>
-            <li><a href="#leistungen" data-i18n="s7.t">Möbelmontage</a></li>
-            <li><a href="#leistungen" data-i18n="s9.t">Beleuchtungsmontage</a></li>
-            <li><a href="#leistungen" data-i18n="s10.t">Gardinenstangen & Regale</a></li>
-            <li><a href="#leistungen" data-i18n="s11.t">Hausmeisterservice</a></li>
-          </ul>
-        </div>
-
-        <div class="footer__col">
           <h4 data-i18n="ft.colNav">Navigation</h4>
           <ul>
             <li><a href="#leistungen" data-i18n="nav.services">Leistungen</a></li>
             <li><a href="#projekte" data-i18n="nav.portfolio">Projekte</a></li>
             <li><a href="#anfrage" data-i18n="nav.request">Anfrage</a></li>
-            <li><a href="#vorteile" data-i18n="nav.advantages">Vorteile</a></li>
+            <li><a href="#warum-wir" data-i18n="nav.advantages">Vorteile</a></li>
             <li><a href="#bewertungen" data-i18n="nav.reviews">Bewertungen</a></li>
             <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
           </ul>
         </div>
 
-        <div class="footer__col footer__contact footer__map-col">
+        <div class="footer__col footer__contact">
           <h4 data-i18n="ft.colContact">Kontakt</h4>
           <ul>
             <li><a data-contact="phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg><span data-contact-text="phone">+49 1577 1234567</span></a></li>
             <li><a data-contact="email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg><span data-contact-text="email">kontakt@andreis-service.de</span></a></li>
             <li><a data-contact="whatsapp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.3 14c-.2.6-1.3 1.2-1.8 1.2s-1.3.3-4-1.4c-2.7-1.6-3.4-3.6-3.6-3.8s-.6-.9-.6-1.7.4-1.2.6-1.4.4-.2.6-.2h.5c.2 0 .4 0 .6.5l.7 1.7c.1.2.1.4 0 .6l-.4.5c-.2.2-.3.3-.1.6s.7 1.1 1.5 1.8c1 .9 1.8 1.1 2 1.2s.4.1.6-.1l.7-.8c.2-.3.4-.2.6-.1l1.7.8c.2.1.4.2.4.3s0 .8-.2 1.3Z"/></svg>WhatsApp</a></li>
-            <li><span style="display:flex;align-items:center;gap:.6rem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:17px;height:17px;color:var(--green);flex:none"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="ft.area">Einsatz in ganz Berlin & Brandenburg</span></span></li>
+            <li><a data-contact="telegram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.6 20c-.2 1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.2 13.9l-4.8-1.5c-1-.3-1-1 .2-1.5l18.7-7.2c.9-.3 1.6.2 1.4 1.6Z"/></svg>Telegram</a></li>
           </ul>
+        </div>
+
+        <div class="footer__col footer__map-col">
+          <h4 data-i18n="ft.mapTitle">Einsatzgebiet</h4>
           <a class="footer__map" href="https://www.google.com/maps/search/?api=1&query=Berlin%20Brandenburg" target="_blank" rel="noopener" aria-label="Einsatzgebiet Berlin und Brandenburg in Google Maps öffnen">
             <span class="footer__map-grid" aria-hidden="true"></span>
             <span class="footer__map-pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"/></svg></span>

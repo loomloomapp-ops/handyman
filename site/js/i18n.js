@@ -27,8 +27,8 @@
 
     /* Hero */
     "hero.eyebrow": "Handyman service · Berlin & Brandenburg",
-    "hero.h1": "Professional kitchen installation, furniture assembly &amp; <span class=\"hl\">handyman service</span> in Berlin and Brandenburg",
-    "hero.sub": "Send us a kitchen link, your plan or photos — and receive a preliminary installation estimate shortly.",
+    "hero.h1": "Professional kitchen installation, furniture assembly &amp;<br><span class=\"hl\">handyman service</span> in Berlin and Brandenburg",
+    "hero.sub": "Send us photos or a link — and receive a preliminary cost estimate shortly.",
     "hero.t1": "Over 5 years of experience",
     "hero.t2": "Fair pricing",
     "hero.t3": "Fast response via WhatsApp",
@@ -55,7 +55,7 @@
 
     /* Trust */
     "trust.eyebrow": "Why Andreis Service",
-    "trust.h2": "Why customers in Berlin & Brandenburg trust us",
+    "trust.h2": "Why customers in Berlin & Brandenburg <span class=\"hl\">trust</span> us",
     "trust.sub": "4.9 out of 5 on CHECK24 and a 100% recommendation rate — the result of clean work and clear communication.",
     "tf1.t": "Experienced craftsman",
     "tf1.d": "Over 5 years of experience with kitchens, furniture and mounting.",
@@ -68,7 +68,7 @@
 
     /* Process */
     "process.eyebrow": "How it works",
-    "process.h2": "How your request works",
+    "process.h2": "How your <span class=\"hl\">request</span> works",
     "process.sub": "In three simple steps from the first message to the finished installation.",
     "st1.t": "Send a request",
     "st1.d": "Send us photos, a plan or a link to your kitchen or furniture — via the form or WhatsApp.",
@@ -118,9 +118,10 @@
 
     /* Services */
     "svc.eyebrow": "Our services",
-    "svc.h2": "Everything for kitchen, furniture and home — from a single source",
+    "svc.h2": "Find the right <span class=\"hl\">service</span> for your home",
     "svc.lead": "From a complete kitchen installation to a single shelf on the wall: clean, precise work across Berlin and Brandenburg.",
     "svc.cta": "Request",
+    "svc.from": "from",
     "s1.t": "Kitchen installation",
     "s1.d": "Professional kitchen assembly in Berlin & Brandenburg — precise, clean and reliable.",
     "s2.t": "Kitchen removal",
@@ -148,7 +149,7 @@
 
     /* Portfolio */
     "pf.eyebrow": "Recent work",
-    "pf.h2": "Selected projects from Berlin & Brandenburg",
+    "pf.h2": "Selected <span class=\"hl\">projects</span> from Berlin & Brandenburg",
     "pf.lead": "A look at real installations — kitchens, wardrobes, lighting and mounting work, delivered on site.",
     "tab.all": "All",
     "tab.kitchen": "Kitchen installation",
@@ -195,7 +196,7 @@
 
     /* Request */
     "rq.eyebrow": "Request",
-    "rq.h2": "Request a free preliminary estimate for your installation",
+    "rq.h2": "Request a free preliminary <span class=\"hl\">estimate</span><br>for your installation",
     "rq.sub": "Send us information, photos or a link to your kitchen or furniture. We will get back to you shortly with an initial assessment.",
     "rq.li1": "Estimate based on a link, plan or photos — no on-site visit needed first",
     "rq.li2": "Fast reply, usually via WhatsApp",
@@ -275,7 +276,7 @@
 
     /* Reviews */
     "rv.eyebrow": "Reviews",
-    "rv.h2": "What customers in Berlin & Brandenburg say",
+    "rv.h2": "What <span class=\"hl\">customers</span> in Berlin & Brandenburg say",
     "rv.lead": "Real reviews from verified CHECK24 customers.",
     "rsum.meta": "50 reviews · 96% five stars",
     "rsum.rec": "100% would recommend",
@@ -296,10 +297,21 @@
     "r4.text": "“We had lamps, shelves and mirrors installed. Everything was done very neatly and cleanly. Great communication throughout.”",
     "r4.name": "Elena S.",
     "r4.loc": "Berlin-Charlottenburg",
+    "r5.text": "“Super! Very competent and friendly. The work was done to our complete satisfaction. Can only recommend.”",
+    "r5.name": "Daniel K.",
+    "r5.loc": "Berlin",
+    "r6.text": "“We can absolutely recommend Andrei and are very happy with the result. We had a complex sliding-door system installed — everything was mastered confidently and with great expertise.”",
+    "r6.name": "Thomas B.",
+    "r6.loc": "Berlin",
+    "r7.text": "“Competent, tidy and helped with more tasks than expected. Andrei mounted a mirror cabinet in the bathroom — straight and sturdy — and fixed my shower glass. Happy to hire him again.”",
+    "r7.name": "Sarah M.",
+    "r7.loc": "Berlin",
+    "aria.prev": "Previous review",
+    "aria.next": "Next review",
 
     /* FAQ */
     "faq.eyebrow": "FAQ",
-    "faq.h2": "Frequently asked questions",
+    "faq.h2": "Frequently asked <span class=\"hl\">questions</span>",
     "faq.lead": "Quick answers to the questions we hear most often.",
     "q1": "What does a kitchen installation cost?",
     "fa1": "The price depends on the size of the kitchen and the complexity of the work. For an initial estimate it is enough to send a link to the kitchen, a kitchen plan or photos.",
@@ -327,6 +339,13 @@
     "ft.impressum": "Imprint",
     "ft.privacy": "Privacy Policy",
     "ft.mapOpen": "Open in Google Maps",
+
+    /* Newsletter */
+    "news.h4": "Tips & offers by email",
+    "news.sub": "Occasional notes on installation and care — no spam, unsubscribe anytime.",
+    "news.ph": "Your email address",
+    "news.cta": "Subscribe",
+    "news.ok": "Thank you! Please check your inbox to confirm.",
 
     /* Popup */
     "pop.title": "Quick request",

@@ -12,6 +12,7 @@
   document.addEventListener("DOMContentLoaded", init);
 
   function init() {
+    initPreloader();
     if (window.I18N) window.I18N.init();
     wireContactLinks();
     initHeader();
@@ -26,6 +27,8 @@
     initStickyCta();
     initCookie();
     initScrollSpy();
+    initRevSlider();
+    initNewsletter();
     initYear();
     initHeadingReveal();
     initCounters();
@@ -33,6 +36,39 @@
       wireContactLinks();   // refresh prefilled messages
       resplitHeadings();    // re-run heading reveal after i18n replaced the text
     });
+  }
+
+  /* ---------- Preloader (brand intro) ---------- */
+  function initPreloader() {
+    const pl = document.getElementById("preloader");
+    const root = document.documentElement;
+    if (!pl) { root.classList.remove("is-preloading"); return; }
+
+    const MIN = 1600;   // keep the intro on screen long enough to read
+    const MAX = 6000;   // hard fail-safe so it never traps the page
+    const startT = (window.performance && performance.now) ? performance.now() : Date.now();
+    let finished = false;
+
+    const remove = () => { if (pl && pl.parentNode) pl.parentNode.removeChild(pl); };
+    const hide = () => {
+      if (finished) return;
+      finished = true;
+      root.classList.remove("is-preloading");   // unlock scroll as it reveals
+      pl.classList.add("is-done");
+      let removed = false;
+      const done = () => { if (removed) return; removed = true; remove(); };
+      pl.addEventListener("transitionend", (e) => { if (e.target === pl) done(); }, { once: true });
+      setTimeout(done, 1200); // fallback in case transitionend doesn't fire
+    };
+
+    const ready = () => {
+      const elapsed = ((window.performance && performance.now) ? performance.now() : Date.now()) - startT;
+      setTimeout(hide, Math.max(0, MIN - elapsed));
+    };
+
+    if (document.readyState === "complete") ready();
+    else window.addEventListener("load", ready, { once: true });
+    setTimeout(hide, MAX);
   }
 
   /* ---------- Contact links from config ---------- */
@@ -398,6 +434,47 @@
       });
     }, { rootMargin: "-45% 0px -50% 0px" });
     sections.forEach((s) => io.observe(s));
+  }
+
+  /* ---------- Reviews slider ---------- */
+  function initRevSlider() {
+    $$(".rev-slider").forEach((slider) => {
+      const track = $(".rev-track", slider);
+      if (!track) return;
+      const prev = $(".rev-prev", slider);
+      const next = $(".rev-next", slider);
+      const stepBy = () => {
+        const card = track.querySelector(".review");
+        return card ? card.getBoundingClientRect().width + 18 : track.clientWidth * 0.85;
+      };
+      const update = () => {
+        const max = track.scrollWidth - track.clientWidth - 4;
+        if (prev) prev.disabled = track.scrollLeft <= 4;
+        if (next) next.disabled = track.scrollLeft >= max;
+      };
+      if (prev) prev.addEventListener("click", () => track.scrollBy({ left: -stepBy(), behavior: "smooth" }));
+      if (next) next.addEventListener("click", () => track.scrollBy({ left: stepBy(), behavior: "smooth" }));
+      track.addEventListener("scroll", update, { passive: true });
+      window.addEventListener("resize", update);
+      update();
+    });
+  }
+
+  /* ---------- Footer newsletter ---------- */
+  function initNewsletter() {
+    $$("form[data-newsletter]").forEach((form) => {
+      const input = $('input[type="email"]', form);
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const val = (input && input.value || "").trim();
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) { if (input) input.focus(); return; }
+        const okText = (window.ANDREIS_LANG === "en")
+          ? "Thank you! Please check your inbox to confirm."
+          : "Danke! Bitte bestätigen Sie die Anmeldung in Ihrem Postfach.";
+        form.innerHTML = '<p style="color:#BFE6D4;font-weight:600;margin:0">' + okText + "</p>";
+        console.info("[Andreis Service] Newsletter signup (mock):", val);
+      });
+    });
   }
 
   /* ---------- Footer year ---------- */

@@ -11,3 +11,6 @@ node_modules/
 
 # Логи
 *.log
+
+# Референсний шаблон Webflow — лише локальний візуальний референс, не частина сайту
+assets/saveweb2zip-com-repairly-webflow-io/
