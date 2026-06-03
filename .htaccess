@@ -1,0 +1,20 @@
+# ==========================================================================
+# Andreis Service — Deploy-Helper
+# Der eigentliche Website liegt im Unterordner /site.
+# Wird das ganze Repo nach public_html deployt, liefert diese .htaccess
+# den Inhalt von /site direkt unter der Domain-Wurzel aus (saubere URLs).
+# Funktioniert auf Hostinger (Apache / LiteSpeed mit mod_rewrite).
+# ==========================================================================
+
+RewriteEngine On
+
+# Startseite -> /site/index.html
+RewriteRule ^$ site/index.html [L]
+
+# Alles andere intern in den /site-Ordner umleiten
+# (verhindert Schleifen: Anfragen, die schon auf /site zeigen, werden ignoriert)
+RewriteCond %{REQUEST_URI} !^/site/
+RewriteRule ^(.*)$ site/$1 [L]
+
+# Falls der Server doch eine Verzeichnis-Indexdatei sucht
+DirectoryIndex site/index.html index.html
