@@ -13,11 +13,12 @@ window.ANDREIS_CONFIG = {
   /* ----- Public business contact details (used across the UI) ----- */
   contact: {
     // International format without spaces for tel:/wa.me links.
-    phoneDisplay: "+49 1577 1234567",
-    phoneHref: "+4915771234567",
-    whatsappNumber: "4915771234567",          // wa.me/<number>
+    phoneDisplay: "+49 176 70756221",
+    phoneHref: "+4917670756221",
+    whatsappNumber: "4917670756221",          // wa.me/<number>
     telegramUser: "AndreisService",           // t.me/<user>
-    email: "kontakt@andreis-service.de",
+    email: "andreis.service@gmail.com",
+    instagram: "https://www.instagram.com/andreisservice?igsh=MTI1Y3Fyc2Ywdm14bA==",
     serviceArea: "Berlin & Brandenburg"
   },
 

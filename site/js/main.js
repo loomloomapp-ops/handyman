@@ -81,6 +81,7 @@
     $$('[data-contact="phone"]').forEach((a) => (a.href = `tel:${cfg.contact.phoneHref}`));
     $$('[data-contact="whatsapp"]').forEach((a) => (a.href = waLink()));
     $$('[data-contact="telegram"]').forEach((a) => (a.href = `https://t.me/${cfg.contact.telegramUser}`));
+    $$('[data-contact="instagram"]').forEach((a) => (a.href = cfg.contact.instagram || "#"));
     $$('[data-contact="email"]').forEach((a) => (a.href = `mailto:${cfg.contact.email}`));
     $$('[data-contact-text="phone"]').forEach((el) => (el.textContent = cfg.contact.phoneDisplay));
     $$('[data-contact-text="email"]').forEach((el) => (el.textContent = cfg.contact.email));
