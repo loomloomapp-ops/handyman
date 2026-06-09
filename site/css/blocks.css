@@ -178,8 +178,9 @@ section[id], footer[id] { scroll-margin-top: 96px; }
 /* ---------- WORKING PROCESS — 3 steps ---------- */
 .process__steps { display: grid; gap: 2.4rem 1.2rem; grid-template-columns: 1fr; position: relative; margin-top: clamp(2rem, 5vw, 3rem); }
 .step { text-align: center; display: flex; flex-direction: column; align-items: center; position: relative; }
-.step__media { position: relative; width: 124px; height: 124px; border-radius: 50%; border: 4px solid var(--white); box-shadow: var(--shadow); }
+.step__media { position: relative; width: 124px; height: 124px; border-radius: 50%; border: 4px solid var(--white); box-shadow: var(--shadow); display: grid; place-items: center; background: var(--green-soft); }
 .step__media img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.step__svg { width: 52px; height: 52px; color: var(--green-deep); }
 .step__ring { position: absolute; inset: -6px; border-radius: 50%; border: 1.5px dashed var(--green); opacity: 0.6; }
 .step__num {
   position: absolute; top: -2px; left: -2px; z-index: 2; width: 38px; height: 38px; border-radius: 50%;
